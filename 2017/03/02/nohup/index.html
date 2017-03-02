@@ -9,16 +9,16 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端技术博客">
+  <meta name="description" content="问题的由来我在终端中启动了服务node app.js然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了怎么办啊 ==&amp;gt; 万能的谷歌（还好厂子里的内网自带翻墙）查资料发现可以用守护进程解决这个问题上面这样启动的脚本，称为”前台任务”（foreground job）。它会独占命令行窗口，只有运行完了或者手">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nohup">
 <meta property="og:url" content="http://yoursite.com/2017/03/02/nohup/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="前端技术博客">
-<meta property="og:updated_time" content="2017-03-02T07:45:41.000Z">
+<meta property="og:description" content="问题的由来我在终端中启动了服务node app.js然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了怎么办啊 ==&amp;gt; 万能的谷歌（还好厂子里的内网自带翻墙）查资料发现可以用守护进程解决这个问题上面这样启动的脚本，称为”前台任务”（foreground job）。它会独占命令行窗口，只有运行完了或者手">
+<meta property="og:updated_time" content="2017-03-02T07:56:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nohup">
-<meta name="twitter:description" content="前端技术博客">
+<meta name="twitter:description" content="问题的由来我在终端中启动了服务node app.js然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了怎么办啊 ==&amp;gt; 万能的谷歌（还好厂子里的内网自带翻墙）查资料发现可以用守护进程解决这个问题上面这样启动的脚本，称为”前台任务”（foreground job）。它会独占命令行窗口，只有运行完了或者手">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -168,7 +168,7 @@
   
     <div class="article-meta">
       <a href="/2017/03/02/nohup/" class="article-date">
-  	<time datetime="2017-03-02T07:45:41.000Z" itemprop="datePublished">2017-03-02</time>
+  	<time datetime="2017-03-02T08:46:02.000Z" itemprop="datePublished">2017-03-02</time>
 </a>
     </div>
   
@@ -190,6 +190,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+	</div>
+
         
 
         
@@ -199,7 +203,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="问题的由来"><a href="#问题的由来" class="headerlink" title="问题的由来"></a>问题的由来</h2><h3 id="我在终端中启动了服务node-app-js"><a href="#我在终端中启动了服务node-app-js" class="headerlink" title="我在终端中启动了服务node app.js"></a>我在终端中启动了服务node app.js</h3><h4 id="然后很开心的发现我的域名-hankewei-xyz-下可以访问网站了"><a href="#然后很开心的发现我的域名-hankewei-xyz-下可以访问网站了" class="headerlink" title="然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了"></a>然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了</h4><h4 id="然后我很开心的关掉了终端-再去访问我的网站，然后我就不开心的发现访问不到了"><a href="#然后我很开心的关掉了终端-再去访问我的网站，然后我就不开心的发现访问不到了" class="headerlink" title="然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了"></a>然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了</h4><h2 id="怎么办啊-gt-万能的谷歌（还好厂子里的内网自带翻墙）"><a href="#怎么办啊-gt-万能的谷歌（还好厂子里的内网自带翻墙）" class="headerlink" title="怎么办啊 ==&gt; 万能的谷歌（还好厂子里的内网自带翻墙）"></a>怎么办啊 ==&gt; 万能的谷歌（还好厂子里的内网自带翻墙）</h2><h3 id="查资料发现可以用守护进程解决这个问题"><a href="#查资料发现可以用守护进程解决这个问题" class="headerlink" title="查资料发现可以用守护进程解决这个问题"></a>查资料发现可以用守护进程解决这个问题</h3><p>上面这样启动的脚本，称为”前台任务”（foreground job）。它会独占命令行窗口，只有运行完了或者手动中止，才能执行其他命令。</p>
+<p>node app.js &amp; 这样就可以把上面的任务变成后台任务</p>
+<p>nohup node server.js &amp; 就是启动一个守护进程</p>
+<ul>
+<li>问题解决 </li>
+</ul>
+
       
     </div>
     
@@ -208,18 +218,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/03/02/nohup-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          nohup
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/02/aliyun-node-n/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">管理node的版本</div>
+    <a href="/2017/03/02/aliyun-mysql/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql 的安装</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   

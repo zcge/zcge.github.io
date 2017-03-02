@@ -165,11 +165,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-aliyun-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nohup" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/02/aliyun-mysql/" class="article-date">
-  	<time datetime="2017-03-02T07:56:13.000Z" itemprop="datePublished">2017-03-02</time>
+      <a href="/2017/03/02/nohup/" class="article-date">
+  	<time datetime="2017-03-02T08:46:02.000Z" itemprop="datePublished">2017-03-02</time>
 </a>
     </div>
   
@@ -182,67 +182,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/02/aliyun-mysql/">
-        mysql 的安装
-        
-      </a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="node装好是就装一波mysql吧"><a href="#node装好是就装一波mysql吧" class="headerlink" title="node装好是就装一波mysql吧"></a>node装好是就装一波mysql吧</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//先安装带有可用的mysql5系列社区版资源的rpm包</div><div class="line">1.rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</div><div class="line"></div><div class="line">//查看</div><div class="line">2.yum repolist enabled | grep &quot;mysql.*-community.*&quot;</div><div class="line"></div><div class="line">//安装</div><div class="line">3.yum -y install mysql-community-server</div><div class="line"></div><div class="line">//开机启动</div><div class="line">systemctl enable mysqld</div><div class="line"></div><div class="line">//启动mysql服务进程</div><div class="line">systemctl start mysqld</div><div class="line"></div><div class="line">//重置密码</div><div class="line">mysql_secure_installation</div></pre></td></tr></table></figure>
-<p>怎么用本地的图像界面访问数据库<br>要设置mysql的远程访问权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">USE mysql; -- 切换到 mysql DB</div><div class="line">SELECT User, Password, Host FROM user;-- 查看现有用户,密码及允许连接的主机</div><div class="line"></div><div class="line">@&apos;192.168.1.100&apos;可以替换为@&apos;%&apos;就可任意ip访问</div><div class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;192.168.1.100&apos; IDENTIFIED BY &apos;&apos; WITH GRANT OPTION;</div><div class="line"></div><div class="line">你可以用SELECT User, Password, Host FROM user;查看是否成功。</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-      
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-nohup-1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/03/02/nohup-1/" class="article-date">
-  	<time datetime="2017-03-02T07:46:02.000Z" itemprop="datePublished">2017-03-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/02/nohup-1/">
+      <a class="article-title" href="/2017/03/02/nohup/">
         nohup
         
       </a>
@@ -289,11 +229,11 @@
 
 
   
-    <article id="post-nohup" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-aliyun-mysql" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/02/nohup/" class="article-date">
-  	<time datetime="2017-03-02T07:45:41.000Z" itemprop="datePublished">2017-03-02</time>
+      <a href="/2017/03/02/aliyun-mysql/" class="article-date">
+  	<time datetime="2017-03-02T07:56:13.000Z" itemprop="datePublished">2017-03-02</time>
 </a>
     </div>
   
@@ -306,8 +246,8 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/02/nohup/">
-        nohup
+      <a class="article-title" href="/2017/03/02/aliyun-mysql/">
+        mysql 的安装
         
       </a>
     </h1>
@@ -318,13 +258,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="node装好是就装一波mysql吧"><a href="#node装好是就装一波mysql吧" class="headerlink" title="node装好是就装一波mysql吧"></a>node装好是就装一波mysql吧</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">//先安装带有可用的mysql5系列社区版资源的rpm包</div><div class="line">1.rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</div><div class="line"></div><div class="line">//查看</div><div class="line">2.yum repolist enabled | grep &quot;mysql.*-community.*&quot;</div><div class="line"></div><div class="line">//安装</div><div class="line">3.yum -y install mysql-community-server</div><div class="line"></div><div class="line">//开机启动</div><div class="line">systemctl enable mysqld</div><div class="line"></div><div class="line">//启动mysql服务进程</div><div class="line">systemctl start mysqld</div><div class="line"></div><div class="line">//重置密码</div><div class="line">mysql_secure_installation</div></pre></td></tr></table></figure>
+<p>怎么用本地的图像界面访问数据库<br>要设置mysql的远程访问权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">USE mysql; -- 切换到 mysql DB</div><div class="line">SELECT User, Password, Host FROM user;-- 查看现有用户,密码及允许连接的主机</div><div class="line"></div><div class="line">@&apos;192.168.1.100&apos;可以替换为@&apos;%&apos;就可任意ip访问</div><div class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;192.168.1.100&apos; IDENTIFIED BY &apos;&apos; WITH GRANT OPTION;</div><div class="line"></div><div class="line">你可以用SELECT User, Password, Host FROM user;查看是否成功。</div></pre></td></tr></table></figure></p>
+
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+	</div>
+
       
 
       
