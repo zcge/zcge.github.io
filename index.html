@@ -582,6 +582,78 @@
 
 
   
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/09/git/" class="article-date">
+  	<time datetime="2016-10-09T12:46:29.000Z" itemprop="datePublished">2016-10-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/09/git/">
+        学习git
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="重温下下git"><a href="#重温下下git" class="headerlink" title="重温下下git"></a>重温下下git</h3><h3 id="git-的作用-版本控制系统"><a href="#git-的作用-版本控制系统" class="headerlink" title="git 的作用: 版本控制系统"></a>git 的作用: 版本控制系统</h3><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i git -g</div></pre></td></tr></table></figure>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git init 把目录变成Git可以管理的仓库</div><div class="line">git add&lt;file&gt; 注意，可反复多次使用，添加多个文件；</div><div class="line">git commit -m 后面输入的是本次提交的说明</div><div class="line">git pull 拉取代码</div><div class="line">git push 推代码</div><div class="line">git status 查看是否有没有提交的修改</div><div class="line">git diff 查看没有提交的修改的内容</div></pre></td></tr></table></figure>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><p>一次次的修改提交后，也许发现改错了，就需要回到上一次修改的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git log 查看历史得到提交的id号</div><div class="line">git reset --hard &quot;commit id号&quot; 回到这次commit的时候的内容</div><div class="line"></div><div class="line">如果回到历史后你后悔了，可以在回来吗？</div><div class="line">显然是可以的 ---- 你只要知道commit id.....</div><div class="line">git reflog 查看reset之后找不到的commit id</div></pre></td></tr></table></figure></p>
+<h3 id="工作区和暂存区的概念"><a href="#工作区和暂存区的概念" class="headerlink" title="工作区和暂存区的概念"></a>工作区和暂存区的概念</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">这个很简单的，但篇幅太长，我就不记录在博客里了</div><div class="line"></div><div class="line">撤销修改</div><div class="line">git checkout -- file可以丢弃工作区的修改</div></pre></td></tr></table></figure>
+<ul>
+<li>注意:没有 – 就变成切分支命令了。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">你把代码git add 添加到暂存区后</div><div class="line">git reset HEAD file</div><div class="line">可以把暂存区的修改撤销掉，重新放回工作区：</div></pre></td></tr></table></figure>
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">rm 删除文件</div><div class="line">git rm 删除文件</div><div class="line">git commit 提交</div><div class="line">文件就从版本库中被删除了。</div><div class="line"></div><div class="line">但是你发现rm 删错了文件</div><div class="line">用git checkout -- file恢复</div><div class="line">git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</div></pre></td></tr></table></figure>
+<h3 id="多人协作-–-分支管理"><a href="#多人协作-–-分支管理" class="headerlink" title="多人协作 – 分支管理"></a>多人协作 – 分支管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line">git branch 查看分支</div><div class="line"></div><div class="line">查看分支：git branch</div><div class="line"></div><div class="line">创建分支：git branch &lt;name&gt;</div><div class="line"></div><div class="line">切换分支：git checkout &lt;name&gt;</div><div class="line"></div><div class="line">创建+切换分支：git checkout -b &lt;name&gt;</div><div class="line"></div><div class="line">合并某分支到当前分支：git merge &lt;name&gt;</div><div class="line"></div><div class="line">删除分支：git branch -d &lt;name&gt;</div></pre></td></tr></table></figure>
+<h3 id="BUG分支"><a href="#BUG分支" class="headerlink" title="BUG分支"></a>BUG分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；</div><div class="line">当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。</div></pre></td></tr></table></figure>
+<h3 id="删除一个没有合并的分支"><a href="#删除一个没有合并的分支" class="headerlink" title="删除一个没有合并的分支"></a>删除一个没有合并的分支</h3><ul>
+<li>如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。</name></li>
+</ul>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">切到当前分支git tag v1.0</div><div class="line">或者找到对应的commit id </div><div class="line">git tag v1.0 &quot;commit id&quot;</div></pre></td></tr></table></figure>
+<ul>
+<li>注意，标签不是按时间顺序列出，而是按字母排序的。可以用git show <tagname>查看标签信息：</tagname></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
