@@ -3,22 +3,61 @@
 <head>
   <meta charset="utf-8">
   
-  <title>nohup 开启守护进程 | 博客</title>
+  <title>js事件冒泡和捕获 | 博客</title>
 
   <!-- keywords -->
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题的由来我在终端中启动了服务node app.js然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了怎么办啊 ==&amp;gt; 万能的谷歌（还好厂子里的内网自带翻墙）查资料发现可以用守护进程解决这个问题上面这样启动的脚本，称为”前台任务”（foreground job）。它会独占命令行窗口，只有运行完了或者手">
+  <meta name="description" content="123&amp;lt;div&amp;gt;    &amp;lt;p&amp;gt;点击事件&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+
+假设都绑定了点击事件
+
+JS事件冒泡
+事件冒泡顺序是由内到外进行事件传播，直到根节点。
+点击p=&amp;gt;先触发p的事件 再触发div的事件。
+
+JS事件捕获
+事件冒泡顺序是由外到内进行事件传播，直到事件源。
+点击p=&amp;gt;先触发div的事件 再触发p的事件。
+
+如何阻止事件的传递
+eve">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nohup 开启守护进程">
-<meta property="og:url" content="http://yoursite.com/2017/03/02/nohup/index.html">
+<meta property="og:title" content="js事件冒泡和捕获">
+<meta property="og:url" content="http://yoursite.com/2017/03/09/js-event/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="问题的由来我在终端中启动了服务node app.js然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了怎么办啊 ==&amp;gt; 万能的谷歌（还好厂子里的内网自带翻墙）查资料发现可以用守护进程解决这个问题上面这样启动的脚本，称为”前台任务”（foreground job）。它会独占命令行窗口，只有运行完了或者手">
-<meta property="og:updated_time" content="2017-03-02T08:27:31.000Z">
+<meta property="og:description" content="123&amp;lt;div&amp;gt;    &amp;lt;p&amp;gt;点击事件&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+
+假设都绑定了点击事件
+
+JS事件冒泡
+事件冒泡顺序是由内到外进行事件传播，直到根节点。
+点击p=&amp;gt;先触发p的事件 再触发div的事件。
+
+JS事件捕获
+事件冒泡顺序是由外到内进行事件传播，直到事件源。
+点击p=&amp;gt;先触发div的事件 再触发p的事件。
+
+如何阻止事件的传递
+eve">
+<meta property="og:updated_time" content="2017-03-09T08:45:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nohup 开启守护进程">
-<meta name="twitter:description" content="问题的由来我在终端中启动了服务node app.js然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了怎么办啊 ==&amp;gt; 万能的谷歌（还好厂子里的内网自带翻墙）查资料发现可以用守护进程解决这个问题上面这样启动的脚本，称为”前台任务”（foreground job）。它会独占命令行窗口，只有运行完了或者手">
+<meta name="twitter:title" content="js事件冒泡和捕获">
+<meta name="twitter:description" content="123&amp;lt;div&amp;gt;    &amp;lt;p&amp;gt;点击事件&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;
+
+假设都绑定了点击事件
+
+JS事件冒泡
+事件冒泡顺序是由内到外进行事件传播，直到根节点。
+点击p=&amp;gt;先触发p的事件 再触发div的事件。
+
+JS事件捕获
+事件冒泡顺序是由外到内进行事件传播，直到事件源。
+点击p=&amp;gt;先触发div的事件 再触发p的事件。
+
+如何阻止事件的传递
+eve">
   
     <link rel="alternative" href="/atom.xml" title="博客" type="application/atom+xml">
   
@@ -164,11 +203,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-nohup" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js-event" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/02/nohup/" class="article-date">
-  	<time datetime="2017-03-02T08:46:02.000Z" itemprop="datePublished">2017-03-02</time>
+      <a href="/2017/03/09/js-event/" class="article-date">
+  	<time datetime="2017-03-09T08:35:17.000Z" itemprop="datePublished">2017-03-09</time>
 </a>
     </div>
   
@@ -181,7 +220,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      nohup 开启守护进程
+      js事件冒泡和捕获
       
     </h1>
   
@@ -191,7 +230,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
 	</div>
 
         
@@ -203,11 +242,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="问题的由来"><a href="#问题的由来" class="headerlink" title="问题的由来"></a>问题的由来</h2><h3 id="我在终端中启动了服务node-app-js"><a href="#我在终端中启动了服务node-app-js" class="headerlink" title="我在终端中启动了服务node app.js"></a>我在终端中启动了服务node app.js</h3><h4 id="然后很开心的发现我的域名-hankewei-xyz-下可以访问网站了"><a href="#然后很开心的发现我的域名-hankewei-xyz-下可以访问网站了" class="headerlink" title="然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了"></a>然后很开心的发现我的域名(hankewei.xyz)下可以访问网站了</h4><h4 id="然后我很开心的关掉了终端-再去访问我的网站，然后我就不开心的发现访问不到了"><a href="#然后我很开心的关掉了终端-再去访问我的网站，然后我就不开心的发现访问不到了" class="headerlink" title="然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了"></a>然后我很开心的关掉了终端 再去访问我的网站，然后我就不开心的发现访问不到了</h4><h2 id="怎么办啊-gt-万能的谷歌（还好厂子里的内网自带翻墙）"><a href="#怎么办啊-gt-万能的谷歌（还好厂子里的内网自带翻墙）" class="headerlink" title="怎么办啊 ==&gt; 万能的谷歌（还好厂子里的内网自带翻墙）"></a>怎么办啊 ==&gt; 万能的谷歌（还好厂子里的内网自带翻墙）</h2><h3 id="查资料发现可以用守护进程解决这个问题"><a href="#查资料发现可以用守护进程解决这个问题" class="headerlink" title="查资料发现可以用守护进程解决这个问题"></a>查资料发现可以用守护进程解决这个问题</h3><p>上面这样启动的脚本，称为”前台任务”（foreground job）。它会独占命令行窗口，只有运行完了或者手动中止，才能执行其他命令。</p>
-<p>node app.js &amp; 这样就可以把上面的任务变成后台任务</p>
-<p>nohup node server.js &amp; 就是启动一个守护进程</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    &lt;p&gt;点击事件&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 <ul>
-<li>问题解决 </li>
+<li>假设都绑定了点击事件</li>
+</ul>
+<h2 id="JS事件冒泡"><a href="#JS事件冒泡" class="headerlink" title="JS事件冒泡"></a>JS事件冒泡</h2><ul>
+<li>事件冒泡顺序是由内到外进行事件传播，直到根节点。</li>
+<li>点击p=&gt;先触发p的事件 再触发div的事件。</li>
+</ul>
+<h2 id="JS事件捕获"><a href="#JS事件捕获" class="headerlink" title="JS事件捕获"></a>JS事件捕获</h2><ul>
+<li>事件冒泡顺序是由外到内进行事件传播，直到事件源。</li>
+<li>点击p=&gt;先触发div的事件 再触发p的事件。</li>
+</ul>
+<h2 id="如何阻止事件的传递"><a href="#如何阻止事件的传递" class="headerlink" title="如何阻止事件的传递"></a>如何阻止事件的传递</h2><ul>
+<li>event.stopPropagation()</li>
+</ul>
+<h2 id="如何选择冒泡和事件捕获"><a href="#如何选择冒泡和事件捕获" class="headerlink" title="如何选择冒泡和事件捕获"></a>如何选择冒泡和事件捕获</h2><ul>
+<li>addEventListener(event, listener, useCapture)方法的第三个参数 true 是捕获 false是冒泡</li>
 </ul>
 
       
@@ -218,18 +269,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/03/09/js-event/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">&lt;</strong>
-      <div class="article-nav-title">
-        
-          js事件冒泡和捕获
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/02/aliyun-mysql/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mysql 的安装</div>
+    <a href="/2017/03/02/nohup/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nohup 开启守护进程</div>
       <strong class="article-nav-caption">&gt;</strong>
     </a>
   

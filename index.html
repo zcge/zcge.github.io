@@ -165,6 +165,82 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-js-event" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/09/js-event/" class="article-date">
+  	<time datetime="2017-03-09T08:35:17.000Z" itemprop="datePublished">2017-03-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/09/js-event/">
+        js事件冒泡和捕获
+        
+      </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    &lt;p&gt;点击事件&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>假设都绑定了点击事件</li>
+</ul>
+<h2 id="JS事件冒泡"><a href="#JS事件冒泡" class="headerlink" title="JS事件冒泡"></a>JS事件冒泡</h2><ul>
+<li>事件冒泡顺序是由内到外进行事件传播，直到根节点。</li>
+<li>点击p=&gt;先触发p的事件 再触发div的事件。</li>
+</ul>
+<h2 id="JS事件捕获"><a href="#JS事件捕获" class="headerlink" title="JS事件捕获"></a>JS事件捕获</h2><ul>
+<li>事件冒泡顺序是由外到内进行事件传播，直到事件源。</li>
+<li>点击p=&gt;先触发div的事件 再触发p的事件。</li>
+</ul>
+<h2 id="如何阻止事件的传递"><a href="#如何阻止事件的传递" class="headerlink" title="如何阻止事件的传递"></a>如何阻止事件的传递</h2><ul>
+<li>event.stopPropagation()</li>
+</ul>
+<h2 id="如何选择冒泡和事件捕获"><a href="#如何选择冒泡和事件捕获" class="headerlink" title="如何选择冒泡和事件捕获"></a>如何选择冒泡和事件捕获</h2><ul>
+<li>addEventListener(event, listener, useCapture)方法的第三个参数 true 是捕获 false是冒泡</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+      
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-nohup" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
