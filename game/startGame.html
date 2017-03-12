@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- 魔塔游戏 -->
+<!-- 作者：韩柯炜 -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>魔塔</title>
+	<style>
+	*{padding: 0;margin: 0;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="css/mota.css">
+	<script src="js/mota.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	</script>
+</head>
+<body>
+	<!-- 外套样式 -->
+	<div class="warp">
+		<!-- 标题 -->
+		<div class="title">
+			<h1>欢迎来到魔塔---凡人</h1>
+		</div>
+		<!-- 游戏的背景层 -->
+		<div class="bg-game">
+			<!-- 游戏盒子 -->
+			<div class="gameBox">
+				<!-- 信息区域 -->
+				<div class="infoArea">
+					<div class="floor">魔塔第<span id="floor"></span>层</div>
+					<div class="info-hero">
+						等级：<span id="rank"></span><br/>
+						生命：<span id="hp"></span><br/>
+						攻击：<span id="att"></span><br/>
+						防御：<span id="def"></span><br/>
+						金币：<span id="gold"></span><br/>
+						经验：<span id="exp"></span><br/>
+					</div>
+					<div class="key">
+						<img src="img/100.png" alt="yellowkey">:<span id="yellowkey"></span><br/>
+						<img src="img/101.png" alt="bluekey">:<span id="bluekey"></span><br/>
+						<img src="img/102.png" alt="redkey">:<span id="redkey"></span><br/>
+					</div>
+					<div class="save-access">
+						
+					</div>
+				</div>
+				<!-- 游戏框 -->
+				<div class="gameArea" id="gameArea">
+					<div class="log" id="log-on-off"><span id="log"></span><p>...按空格键继续</p></div>
+					<!-- 快捷键J按下弹出的界面 -->
+					<div class="j" id="j">
+						
+					</div>
+					<!-- 快捷键L按下弹出的界面 -->
+					<div class="l" id="l">
+					</div>
+					<!-- 商店，商人，升级的智者的选择确定框 -->
+					<div class="shop" id="shop">
+						<div class="shop-1" id="shop-1"></div>
+						<div class="shop-2" id="shop-2"></div>
+						<div class="shop-3" id="shop-3"></div>
+						<div class="shop-4" id="shop-4"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 创世神的话————游戏说明 -->
+		<!-- 额外功能—————暂时未完成 -->
+		<div class="god-say">
+			<p>上下左右控制方向，2,8键进行商店物品选择，空格表示确定/继续游戏，
+			<br/>[J可以跳跃楼层，L可以看怪物属性(需要获得特定道具)]</p>
+			作弊器: <input type="text" name="zuobi" id="zuobi">
+			<button onclick="zuobi();">提交作弊码</button>
+		</div>
+	</div>
+</body>
+</html>
