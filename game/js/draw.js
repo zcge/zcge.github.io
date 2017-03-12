@@ -116,15 +116,15 @@
 	/*得到我需要的代码*/
     function outWhatINeed() {
             var t = new Array();
-            t[0] = '[<br/>';
+            t[0] = '[<br>';
             for (i = 0; i < 11; i++) {
                 t[t.length] = '&nbsp;&nbsp;&nbsp;&nbsp;[';
                 for (j = 0; j < 11; j++) {
                     t[t.length] = datas[i][j];
                     if (j < 10) t[t.length] = ', ';
                 }
-                if (i < 10) t[t.length] = '], <br/>';
-                else t[t.length] = '] <br/>';
+                if (i < 10) t[t.length] = '], <br>';
+                else t[t.length] = '] <br>';
             }
             t[t.length] = '], ';
             mapOutput.innerHTML = t.join('');

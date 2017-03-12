@@ -84,127 +84,7 @@ function keydown(e) {
             }else if(isonJ){
                 j_box[selectJ].style.background='#2E64FE';
                 selectJ++;
-                if(selectJ<=22){
-                    j_box[selectJ].style.background='#000';
-                }else{
-                    selectJ=0;
-                    j_box[selectJ].style.background='#000';
-                }
-            }
-            break;
-        case 37:  // 左
-            if(!isonlog&&!isonJ&&!isonShop){
-                movePlayer(3);
-            }
-            break;
-        case 39:  // 右
-            if(!isonlog&&!isonJ&&!isonShop){
-                movePlayer(4);
-            }
-            break;
-        default:
-    }
-}
-document.onkeydown = keydown;
-//移动人物
-function movePlayer(num){//num是移动方向
-    wipeHero();
-    switch(num){
-        case 1:
-            py--;
-            if(isRunaway()){
-                py++;
-            }else{
-                eventHanding(num);//处理事件
-            }
-            face=1;
-        break;
-        case 2:
-            py++;
-            isRunaway();
-            if(isRunaway()){
-                py--;
-            }else{
-                eventHanding(num);//处理事件
-            }
-            face=2;
-        break;
-        case 3:
-            px--;
-            if(isRunaway()){
-                px++;
-            }else{
-                eventHanding(num);//处理事件
-            }
-            face=3;
-        break;
-        case 4:
-            px++;
-            if(isRunaway()){
-                px--;
-            }else{
-                eventHanding(num);//处理事件
-            }
-            face=4;
-        break;
-    }
-    hero();
-    showInfo();
-}
-//人物移动后判断是否超出边界
-function isRunaway(){
-    if(px>10||px<0||py>10||py<0){
-        return true;
-    }else{
-        return false;
-    }
-}
-//不能按指定方向移动
-function cantmove(num){
-    switch(num){
-        case 1:
-        py++;
-        break;
-        case 2:
-        py--;
-        break;
-        case 3:
-        px++;
-        break;
-        case 4:
-        px--;
-        break;
-    }
-}
-//设置到过的最高层，在上楼时执行
-function setVisited(){
-    if(visited<=floor){
-        visited=floor;
-    }
-}
-//升级
-function levelUp(sjcs){//sjcs升级次数
-    for(i=0;i<sjcs;i++){
-        hp=hp+1000;
-        att=att+7;
-        def=def+7;
-        rank++;
-    }
-}
-//能否战斗，会死不战斗，胜利战斗
-function canfighting(m_x){//m_x怪物的编号
-  var fhp=hp;
-  var fatt=att;
-  var fdef=def;
-  var mhp=monster[m_x][0];
-  var matt=monster[m_x][1];
-  var mdef=monster[m_x][2];
-  var giveAtt=fatt-mdef;
-  var getAtt=matt-fdef;
-  if(getAtt<0){
-    getAtt=0;
-  }
-  if(giveAtt>0&&getAtt==0){
+                if(selectJ<=22){ j_box[selectj].style.background="#000" ;="" }else{="" selectj="0;" }="" break;="" case="" 37:="" 左="" if(!isonlog&&!isonj&&!isonshop){="" moveplayer(3);="" 39:="" 右="" moveplayer(4);="" default:="" document.onkeydown="keydown;" 移动人物="" function="" moveplayer(num){="" num是移动方向="" wipehero();="" switch(num){="" 1:="" py--;="" if(isrunaway()){="" py++;="" eventhanding(num);="" 处理事件="" face="1;" 2:="" isrunaway();="" 3:="" px--;="" px++;="" 4:="" hero();="" showinfo();="" 人物移动后判断是否超出边界="" isrunaway(){="" if(px="">10||px<0||py>10||py<0){ return="" true;="" }else{="" false;="" }="" 不能按指定方向移动="" function="" cantmove(num){="" switch(num){="" case="" 1:="" py++;="" break;="" 2:="" py--;="" 3:="" px++;="" 4:="" px--;="" 设置到过的最高层，在上楼时执行="" setvisited(){="" if(visited<="floor){" visited="floor;" 升级="" levelup(sjcs){="" sjcs升级次数="" for(i="0;i<sjcs;i++){" hp="hp+1000;" att="att+7;" def="def+7;" rank++;="" 能否战斗，会死不战斗，胜利战斗="" canfighting(m_x){="" m_x怪物的编号="" var="" fhp="hp;" fatt="att;" fdef="def;" mhp="monster[m_x][0];" matt="monster[m_x][1];" mdef="monster[m_x][2];" giveatt="fatt-mdef;" getatt="matt-fdef;" if(getatt<0){="" if(giveatt="">0&&getAtt==0){
         return true;
   }else if(giveAtt>0&&getAtt>0){
     mhp=mhp-giveAtt;
@@ -229,11 +109,7 @@ function attMonster(m_x){
   var mdef=monster[m_x][2];
   var giveAtt=fatt-mdef;
   var getAtt=matt-fdef;
-  if(getAtt<0){
-    getAtt=0;
-  }
-  mhp=mhp-giveAtt;
-    while(mhp>0){
+  if(getAtt<0){ getatt="0;" }="" mhp="mhp-giveAtt;" while(mhp="">0){
         fhp=fhp-getAtt;
         mhp=mhp-giveAtt;
     }  
@@ -248,7 +124,7 @@ function youGetFromMonster(m_x){
 //事件触发器
 function  eventHanding(num){
     /*这里是遇到怪物的基础事件。战斗，得到基础奖励*/
-    if(rawFloorData[floor][py][px]<=33&&rawFloorData[floor][py][px]>=0){
+    if(rawFloorData[floor][py][px]<=33&&rawfloordata[floor][py][px]>=0){
             var an_logo_num=rawFloorData[floor][py][px];
             if(canfighting(an_logo_num)){
                 rawFloorData[floor][py][px]=400;
@@ -295,131 +171,56 @@ function  eventHanding(num){
         case 404:
             floor++;//楼层+1
             setVisited();
-            for(i=0;i<11;i++){//找到上一层的下楼楼梯口
-                for(j=0;j<11;j++){
-                    if(rawFloorData[floor][i][j]==405){
-                        px=j;
-                        py=i;
-                    }
-                }
-            }
-            if(floor==21){
-                px=5;
-                py=5;
-                onLog("风之罗盘被魔王毁灭，打败魔王获得胜利。");
-                compass = false;
-            }
-            refreshMap();
-        break;
-        /*下楼*/
-        case 405:
-            floor--;
-            for(i=0;i<11;i++){//找到下一层的上楼楼梯口
-                for(j=0;j<11;j++){
-                    if(rawFloorData[floor][i][j]==404){
-                        px=j;
-                        py=i;
-                    }
-                }
-            }
-            refreshMap();
-        break;
-        /*撞墙*/
-        case 401:
-            cantmove(num);
-        break;
-        /*不能进入岩浆*/
-        case 402:
-            cantmove(num);
-        break;
-        /*不能进入星空*/
-        case 403:
-            cantmove(num);
-        break;
-        case 406:
-            cantmove(num);
-        break;
-        case 407:
-            if(floor==3){
-                initShop("+800生命值/25gold","+4攻击力/25gold","+4防御力/25gold","离开商店");
-                onShop();
-            }
-            if(floor==11){
-                initShop("+4000生命值/100gold","+20攻击力/100gold","+20防御力/100gold","离开商店");
-                onShop();
-            }
-            cantmove(num);
-        break;
-        case 408:
-            cantmove(num);
-        break;
-        /*道具的获得事件*/
-        case 100:
-            onLog('获得 黄色钥匙。');
-            yellowkey++;
-            rawFloorData[floor][py][px]=400;
-            break;
-        case 101:
-            onLog('获得 蓝色钥匙。');
-            bluekey++;
-            rawFloorData[floor][py][px]=400;
-            break;
-        case 102:
-            onLog('获得 红色钥匙。');
-            redkey++;
-            rawFloorData[floor][py][px]=400;
-            break;
-        case 103:
-            onLog('获得 钥匙盒。<br/>所有颜色钥匙各增加1把。');
+            for(i=0;i<11;i++){ 找到上一层的下楼楼梯口="" for(j="0;j<11;j++){" if(rawfloordata[floor][i][j]="=405){" px="j;" py="i;" }="" if(floor="=21){" onlog("风之罗盘被魔王毁灭，打败魔王获得胜利。");="" compass="false;" refreshmap();="" break;="" *下楼*="" case="" 405:="" floor--;="" for(i="0;i<11;i++){//找到下一层的上楼楼梯口" *撞墙*="" 401:="" cantmove(num);="" *不能进入岩浆*="" 402:="" *不能进入星空*="" 403:="" 406:="" 407:="" initshop("+800生命值="" 25gold","+4攻击力="" 25gold","+4防御力="" 25gold","离开商店");="" onshop();="" initshop("+4000生命值="" 100gold","+20攻击力="" 100gold","+20防御力="" 100gold","离开商店");="" 408:="" *道具的获得事件*="" 100:="" onlog('获得="" 黄色钥匙。');="" yellowkey++;="" rawfloordata[floor][py][px]="400;" 101:="" 蓝色钥匙。');="" bluekey++;="" 102:="" 红色钥匙。');="" redkey++;="" 103:="" 钥匙盒。<br="">所有颜色钥匙各增加1把。');
             yellowkey++;
             bluekey++;
             redkey++;
             rawFloorData[floor][py][px]=400;
             break;
         case 105:
-            onLog('获得 红宝石。<br/>攻击力+5。');
+            onLog('获得 红宝石。<br>攻击力+5。');
             att += 5;
             rawFloorData[floor][py][px]=400;
             break;
         case 106:
-            onLog('获得 蓝宝石。<br/>防御力+5。');
+            onLog('获得 蓝宝石。<br>防御力+5。');
             def += 5;
             rawFloorData[floor][py][px]=400;
             break;
         case 107:
-            onLog('获得 绿宝石。<br/>攻击力、防御力+5。');
+            onLog('获得 绿宝石。<br>攻击力、防御力+5。');
             att += 5;
             def += 5;
             rawFloorData[floor][py][px]=400;
             break;
         case 108:
-            onLog('获得 大血瓶。<br/>生命+500。');
+            onLog('获得 大血瓶。<br>生命+500。');
             hp += 500;
             rawFloorData[floor][py][px]=400;
             break;
         case 109:
-            onLog('获得 小血瓶。<br/>生命+200。');
+            onLog('获得 小血瓶。<br>生命+200。');
             hp += 200;
             rawFloorData[floor][py][px]=400;
             break;
         case 110:
-            onLog('获得 大金币。<br/>金币+300。');
+            onLog('获得 大金币。<br>金币+300。');
             gold += 300;
             rawFloorData[floor][py][px]=400;
             break;
         case 111:
-            onLog('获得 十字架。<br/>仙子的物品，能释放出强大的力量。');
+            onLog('获得 十字架。<br>仙子的物品，能释放出强大的力量。');
             cross = true;
             feary++;
             rawFloorData[floor][py][px]=400;
             break;
         case 112:
-            onLog('获得 圣光徽章。<br/>用神圣的光芒照耀敌人，显示敌人的能力。<br/>&lt;L&gt;键发动，显示怪物的详细资料。');
+            onLog('获得 圣光徽章。<br>用神圣的光芒照耀敌人，显示敌人的能力。<br>&lt;L&gt;键发动，显示怪物的详细资料。');
             badge = true;
             rawFloorData[floor][py][px]=400;
             break;
         case 113:
-            onLog('获得 风之罗盘。<br/>依靠风的力量快速移动。<br/>&lt;J&gt;键发动，可快速到达已经经过的楼层。');
+            onLog('获得 风之罗盘。<br>依靠风的力量快速移动。<br>&lt;J&gt;键发动，可快速到达已经经过的楼层。');
             compass = true;
             rawFloorData[floor][py][px]=400;
             break;
@@ -441,37 +242,37 @@ function  eventHanding(num){
             rawFloorData[floor][py][px]=400;
             break;
         case 116:
-            onLog('获得 星光神锒。<br/>注入了星光力量的锄头。');
+            onLog('获得 星光神锒。<br>注入了星光力量的锄头。');
             hammer = true;
             rawFloorData[floor][py][px]=400;
             break;
         case 117:
-            onLog('获得 铁剑。<br/>攻击力+10。');
+            onLog('获得 铁剑。<br>攻击力+10。');
             att += 10;
             rawFloorData[floor][py][px]=400;
             break;
         case 118:
-            onLog('获得 青锋剑。<br/>攻击力+70。');
+            onLog('获得 青锋剑。<br>攻击力+70。');
             att += 70;
             rawFloorData[floor][py][px]=400;
             break;
         case 119:
-            onLog('获得 星光神剑。<br/>攻击力+150。');
+            onLog('获得 星光神剑。<br>攻击力+150。');
             att += 150;
             rawFloorData[floor][py][px]=400;
             break;
         case 120:
-            onLog('获得 铁盾。<br/>防御力+10。');
+            onLog('获得 铁盾。<br>防御力+10。');
             def += 10;
             rawFloorData[floor][py][px]=400;
             break;
         case 121:
-            onLog('获得 黄金盾。<br/>防御力+85。');
+            onLog('获得 黄金盾。<br>防御力+85。');
             def += 85;
             rawFloorData[floor][py][px]=400;
             break;
         case 122:
-            onLog('获得 光芒神盾。<br/>防御力+190。');
+            onLog('获得 光芒神盾。<br>防御力+190。');
             def += 190;
             rawFloorData[floor][py][px]=400;
             break;
@@ -553,149 +354,7 @@ function  eventHanding(num){
                 initShop("提升三级/270exp","+17攻击力/95exp","+17防御力/95exp","离开商店");
                 onShop();
             }else if(floor ==15){
-                if(exp<500){
-                    onLog("有500经验我可以把我+120的剑给你");
-                }else{
-                    onLog("强制吸取你500点经验，我的+120的剑给你了")
-                    exp-=500;
-                    att+=120;
-                    showInfo();
-                    rawFloorData[floor][py][px] = 400;
-                    refreshMap();
-                }
-            }
-            cantmove(num);
-        break;
-        case 602:
-            if(!hammer){
-                onLog('我是小偷,我帮你打开了2层的门,把我的神器星光神锒交给我，我还可以帮你打开18层的暗道');
-                rawFloorData[2][6][1] = 400;
-                cantmove(num);
-            }else{
-                onLog('我帮你打开了18层的暗道');
-                hammer=false;
-                rawFloorData[18][8][5] = 400;  // 18层路障消失
-                rawFloorData[18][9][5] = 400;
-                rawFloorData[floor][py][px] = 400;
-                rawFloorData[21][1][3] = 602;
-                cantmove(num);
-            }
-        break;
-        case 603:
-            if(floor==2){
-                onLog("你救了我，给你把+30的盾吧");
-                def += 30;
-                showInfo();
-                rawFloorData[floor][py][px] = 400;
-                refreshMap();
-            }else if(floor==5){
-                initShop("黄钥匙/10gold","蓝钥匙/50gold","红钥匙/100gold","不再买钥匙");
-                onShop();
-            }else if(floor==12){
-                initShop("7gold/黄钥匙","35gold/蓝钥匙","70gold/红钥匙","不再卖钥匙");
-                onShop();
-            }else if(floor==15){
-                if(gold<500){
-                    onLog("有500gold我可以把我+120的盾给你");
-                }else{
-                    onLog("你居然凑到了500gold，强制收取了，我的+120的盾给你了")
-                    gold-=500;
-                    def+=120;
-                    showInfo();
-                    rawFloorData[floor][py][px] = 400;
-                    refreshMap();
-                }
-            }
-            cantmove(num);
-        break;
-        case 604:
-            if(floor==18){
-                onLog('美丽的公主：父王怎么派了个土鳖来救我,魔王用法力把我带到了21层，救我');
-                rawFloorData[18][4][5] = 400;
-                rawFloorData[18][10][10] = 404;
-                rawFloorData[21][1][7]=604;
-                refreshMap();
-            }
-            if(floor==21){
-                if(rawFloorData[21][1][5] != 400){
-                    onLog("快去杀死那只魔王啊");
-                }else{
-                    onLog("勇士你获得了胜利，带着公主去做该做的事情吧");
-                }
-            }
-            cantmove(num);
-        break;
-    }
-}
-function gofloor(fly){//飞到该楼层
-    //去除人物
-    blocks[py][px].style.background='url(./img/400.png';
-    floor=fly;
-    //刷新地图
-    refreshMap();
-    showInfo();
-    //画上人物
-    for(i=0;i<11;i++){//找到上一层的下楼楼梯口
-        for(j=0;j<11;j++){
-            if(rawFloorData[floor][i][j]==405){
-                px=j;
-                py=i;
-            }
-        }
-    }
-    if(fly==0){
-        px=5;
-        py=10;
-    }
-    hero();
-}
-function canfloor(fly){//能否飞到该楼层
-    if(fly<=visited)
-        return true;
-    else
-        return false;
-}
-//千里眼界面要用到的方法
-function floorMonsterList(){//返回当前楼层的怪兽种类数组下标
-    var listMonster = new Array();
-    var theList=new Array();
-    for(i=0;i<34;i++){
-        listMonster[i]=0;
-    }
-    for(i=0;i<11;i++){
-        for(j=0;j<11;j++){
-            if(rawFloorData[floor][i][j]<34){
-                listMonster[rawFloorData[floor][i][j]]=1;
-            }
-        }
-    }
-    for(i=0,j=0;i<34;i++){
-        if(listMonster[i]==1){
-            theList[j]=i;
-            j++;
-        }
-    }
-    return theList;
-}
-function ifYouAtt(m_x){//如果你攻击该怪兽,你将受到的伤害
-    var hurt;
-    if(!canfighting(m_x)){
-        hurt='?';
-    }else{
-        hurt=0;
-        var fhp=hp;
-        var fatt=att;
-        var fdef=def;
-        var mhp=monster[m_x][0];
-        var matt=monster[m_x][1];
-        var mdef=monster[m_x][2];
-        var giveAtt=fatt-mdef;
-        var getAtt=matt-fdef;
-        if(getAtt<0){
-          getAtt=0;
-        }
-        mhp=mhp-giveAtt;
-            while(mhp>0){
+                if(exp<500){ onlog("有500经验我可以把我+120的剑给你");="" }else{="" onlog("强制吸取你500点经验，我的+120的剑给你了")="" exp-="500;" att+="120;" showinfo();="" rawfloordata[floor][py][px]="400;" refreshmap();="" }="" cantmove(num);="" break;="" case="" 602:="" if(!hammer){="" onlog('我是小偷,我帮你打开了2层的门,把我的神器星光神锒交给我，我还可以帮你打开18层的暗道');="" rawfloordata[2][6][1]="400;" onlog('我帮你打开了18层的暗道');="" hammer="false;" rawfloordata[18][8][5]="400;" 18层路障消失="" rawfloordata[18][9][5]="400;" rawfloordata[21][1][3]="602;" 603:="" if(floor="=2){" onlog("你救了我，给你把+30的盾吧");="" def="" +="30;" }else="" initshop("黄钥匙="" 10gold","蓝钥匙="" 50gold","红钥匙="" 100gold","不再买钥匙");="" onshop();="" initshop("7gold="" 黄钥匙","35gold="" 蓝钥匙","70gold="" 红钥匙","不再卖钥匙");="" if(gold<500){="" onlog("有500gold我可以把我+120的盾给你");="" onlog("你居然凑到了500gold，强制收取了，我的+120的盾给你了")="" gold-="500;" def+="120;" 604:="" onlog('美丽的公主：父王怎么派了个土鳖来救我,魔王用法力把我带到了21层，救我');="" rawfloordata[18][4][5]="400;" rawfloordata[18][10][10]="404;" rawfloordata[21][1][7]="604;" if(rawfloordata[21][1][5]="" !="400){" onlog("快去杀死那只魔王啊");="" onlog("勇士你获得了胜利，带着公主去做该做的事情吧");="" function="" gofloor(fly){="" 飞到该楼层="" 去除人物="" blocks[py][px].style.background="url(./img/400.png" ;="" floor="fly;" 刷新地图="" 画上人物="" for(i="0;i<11;i++){//找到上一层的下楼楼梯口" for(j="0;j<11;j++){" if(rawfloordata[floor][i][j]="=405){" px="j;" py="i;" if(fly="=0){" hero();="" canfloor(fly){="" 能否飞到该楼层="" if(fly<="visited)" return="" true;="" else="" false;="" 千里眼界面要用到的方法="" floormonsterlist(){="" 返回当前楼层的怪兽种类数组下标="" var="" listmonster="new" array();="" thelist="new" listmonster[i]="0;" if(rawfloordata[floor][i][j]<34){="" listmonster[rawfloordata[floor][i][j]]="1;" if(listmonster[i]="=1){" thelist[j]="i;" j++;="" thelist;="" ifyouatt(m_x){="" 如果你攻击该怪兽,你将受到的伤害="" hurt;="" if(!canfighting(m_x)){="" hurt="?" fhp="hp;" fatt="att;" fdef="def;" mhp="monster[m_x][0];" matt="monster[m_x][1];" mdef="monster[m_x][2];" giveatt="fatt-mdef;" getatt="matt-fdef;" if(getatt<0){="" while(mhp="">0){
                 fhp=fhp-getAtt;
                 mhp=mhp-giveAtt;
                 hurt=hurt+getAtt;
@@ -725,9 +384,7 @@ function buyone(){
             offShop();
             onLog("屌丝没钱滚蛋");
         }
-    }else if(floor==5&&px<5){//5层左侧那老头
-        exp=exp-100;
-        if(exp>=0){
+    }else if(floor==5&&px<5){ 5层左侧那老头="" exp="exp-100;" if(exp="">=0){
             levelUp(1);
             showInfo();
         }else{
@@ -788,9 +445,7 @@ function buytwo(){
             offShop();
             onLog("屌丝没钱滚蛋");
         }
-    }else if(floor==5&&px<5){//5层左侧那老头
-        exp=exp-30;
-        if(exp>=0){
+    }else if(floor==5&&px<5){ 5层左侧那老头="" exp="exp-30;" if(exp="">=0){
             att+=30;
             showInfo();
         }else{
@@ -851,9 +506,7 @@ function buythree(){
             offShop();
             onLog("屌丝没钱滚蛋");
         }
-    }else if(floor==5&&px<5){//5层左侧那老头
-        exp=exp-30;
-        if(exp>=0){
+    }else if(floor==5&&px<5){ 5层左侧那老头="" exp="exp-30;" if(exp="">=0){
             def+=30;
             showInfo();
         }else{
@@ -915,90 +568,7 @@ window.onload = function (){
     showInfo();
     j=$("j");
     var j_n;
-    for(i=0;i<23;i++){
-        j_n=document.createElement('div');
-        j_n.innerHTML=i;
-        j_n.className = 'j_block';
-        j_box[i]=j_n;
-        j.appendChild(j_n);
-    }
-    j_box[0].style.background='#000';
-};
-//刷新地图，用于上下楼层时候刷新界面
-function refreshMap(){
-    for (i = 0; i < 11; i++) {
-        for (j = 0; j < 11; j++) {
-            blocks[i][j].style.background = 'url(./img/'+rawFloorData[floor][i][j]+'.png)';
-        }
-    }
-}
-//刷新游戏旁边的人物属性信息
-function showInfo(){
-    $('floor').innerHTML=floor;
-    $('att').innerHTML=att;
-    $('def').innerHTML=def;
-    $('gold').innerHTML=gold;
-    $('exp').innerHTML=exp;
-    $('hp').innerHTML=hp;
-    $('rank').innerHTML=rank;
-    $('redkey').innerHTML=redkey;
-    $('bluekey').innerHTML=bluekey;
-    $('yellowkey').innerHTML=yellowkey;
-}
-//画人物到游戏界面上
-function hero(){
-    blocks[py][px].style.background = 'url(./img/player_'+face+'.gif)';
-}
-//显示游戏信窗口
-function onLog(msg){
-    $("log").innerHTML=msg;
-    $("log-on-off").style.display = 'block';
-    isonlog=true;
-}
-//关闭游戏信息窗口
-function off(){
-    $("log-on-off").style.display = "none";
-    isonlog=false;
-}
-//显示电梯界面J
-function onJ(){
-    if(compass==true){//只有有风之罗盘的人才能够做电梯
-        $("j").style.display = 'block';
-        isonJ=true;
-    }
-}
-function offJ(){
-    $("j").style.display = 'none';
-    isonJ=false;
-}
-//移除原来的人物图画
-function wipeHero(){
-     blocks[py][px].style.background = 'url(./img/'+rawFloorData[floor][py][px]+'.png)';
-}
-function showLook(){//构造千里眼界面
-    var list = floorMonsterList();
-    var size =list.length;
-    var l=$("l");
-    var str=new Array();
-    str[0]="怪物图标";
-    str[1]="怪物名称";
-    str[2]="怪物生命";
-    str[3]="怪物攻击";
-    str[4]="怪物防御";
-    str[5]="受到伤害";
-    str[6]="金币/经验";
-    var tableNode=document.createElement("table");
-    mycurrent_row = document.createElement("tr");
-
-    for(var i = 0; i < 7; i++){
-        th=document.createElement("th");
-        currenttext = document.createTextNode(str[i]);
-        th.appendChild(currenttext);
-        mycurrent_row.appendChild(th);
-    }
-    tableNode.appendChild(mycurrent_row);
-    for(var j = 0; j < size; j++) {
-        // 创建一个<tr>元素
+    for(i=0;i<23;i++){ j_n="document.createElement('div');" j_n.innerhtml="i;" j_n.classname="j_block" ;="" j_box[i]="j_n;" j.appendchild(j_n);="" }="" j_box[0].style.background="#000" };="" 刷新地图，用于上下楼层时候刷新界面="" function="" refreshmap(){="" for="" (i="0;" i="" <="" 11;="" i++)="" {="" (j="0;" j="" j++)="" blocks[i][j].style.background="url(./img/" +rawfloordata[floor][i][j]+'.png)';="" 刷新游戏旁边的人物属性信息="" showinfo(){="" $('floor').innerhtml="floor;" $('att').innerhtml="att;" $('def').innerhtml="def;" $('gold').innerhtml="gold;" $('exp').innerhtml="exp;" $('hp').innerhtml="hp;" $('rank').innerhtml="rank;" $('redkey').innerhtml="redkey;" $('bluekey').innerhtml="bluekey;" $('yellowkey').innerhtml="yellowkey;" 画人物到游戏界面上="" hero(){="" blocks[py][px].style.background="url(./img/player_" +face+'.gif)';="" 显示游戏信窗口="" onlog(msg){="" $("log").innerhtml="msg;" $("log-on-off").style.display="block" isonlog="true;" 关闭游戏信息窗口="" off(){="" 显示电梯界面j="" onj(){="" if(compass="=true){//只有有风之罗盘的人才能够做电梯" $("j").style.display="block" isonj="true;" offj(){="" 移除原来的人物图画="" wipehero(){="" +rawfloordata[floor][py][px]+'.png)';="" showlook(){="" 构造千里眼界面="" var="" list="floorMonsterList();" size="list.length;" l="$("l");" str="new" array();="" str[0]="怪物图标" str[1]="怪物名称" str[2]="怪物生命" str[3]="怪物攻击" str[4]="怪物防御" str[5]="受到伤害" str[6]="金币/经验" tablenode="document.createElement("table");" mycurrent_row="document.createElement("tr");" for(var="" 7;="" i++){="" th="document.createElement("th");" currenttext="document.createTextNode(str[i]);" th.appendchild(currenttext);="" mycurrent_row.appendchild(th);="" tablenode.appendchild(mycurrent_row);="" size;="" 创建一个<tr="">元素
         mycurrent_row = document.createElement("tr");
         for(var i = 0; i < 7; i++) {
         // 创建一个<td>元素
@@ -1028,9 +598,9 @@ function showLook(){//构造千里眼界面
                 currenttext = document.createTextNode(monster[list[j]][3]+"/"+monster[list[j]][4]);
                 break;
             }
-            // 将创建的文本节点添加到<td>里
+            // 将创建的文本节点添加到</td><td>里
             mycurrent_cell.appendChild(currenttext);
-            // 将列<td>添加到行<tr>
+            // 将列</td><td>添加到行</td><tr>
             mycurrent_row.appendChild(mycurrent_cell);
         }
         tableNode.appendChild(mycurrent_row);
@@ -1466,4 +1036,4 @@ function zuobi(){
         compass=true;
     }
     showInfo();
-}
+}</tr></23;i++){></5){></5){></5){></500){></11;i++){></=33&&rawfloordata[floor][py][px]></0){></0){></0||py></=22){>
